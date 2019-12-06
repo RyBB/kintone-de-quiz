@@ -1,0 +1,38 @@
+service: {YOUR_SERVICE_NAME}
+
+custom:
+  defaultStage: prod
+  defaultProfile: default
+  defaultDomain: {YOUR_KINTONE_DOMAIN}
+  defaultAppId: {YOUR_KINTONE_DOMAIN}
+  defaultAPIToken: {YOUR_KINTONE_APITOKEN}
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: ap-northeast-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+      Resource:
+        - "*"
+  environment:
+    KINTONE_DOMAIN: ${self:custom.defaultDomain}
+    KINTONE_APPID: ${self:custom.defaultAppId}
+    KINTONE_APITOKEN: ${self:custom.defaultAPIToken}
+
+functions:
+  func:
+    handler: handler.main
+    description: kintoneクイズゲームのサーバーサイド処理
+    events:
+      - http:
+          path: ${self:service}-func
+          method: post
+          cors: true
+    environment:
+      FUNCTION_NAME: ${self:service}-func
