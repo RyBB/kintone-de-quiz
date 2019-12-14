@@ -9,6 +9,7 @@ const postRecord = function(ANS, DEVICE) {
 for (let i = 0; i < btns.length; i++) {
   btns[i].onmouseup = function() {
     const device = window.navigator.userAgent;
+    console.log(device);
 
     return postRecord(this.textContent, device)
       .then(() => {
