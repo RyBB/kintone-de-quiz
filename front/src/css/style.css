@@ -1,28 +1,92 @@
-.container {
-  text-align: center;
+body {
+  margin: 0;
+  background-color: #D4D7D7;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.buttons,
-.buttons table {
-  margin: 0 auto;
-  width: 80vw;
+.header {
+  width: 100%;
+  margin: 0;
+  height: 50px;
+  background-color: #ffbf00;
+}
+.header p {
+  margin: 0;
+  padding-top: 13px;
+  padding-left: 15px;
+  font-weight: bold;
+}
+.header-black {
+  width: 100%;
+  margin: 0;
+  height: 30px;
+  background-color: #4B4B4B;
+}
+.header-image {
+  width: 100%;
+  margin: 0;
+  height: 50px;
+  background-image: url('https://blob.swri.jp/b4be6341e429bbe6ca51111fb5071bc9.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.header-image p {
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 13px;
+  padding-left: 15px;
+}
+.header-text {
+  margin: 0;
+}
+.main {
+  margin: 15px;
+  padding: 20px;
+  background-color: white;
+}
+.vote-text {
+  margin: 0;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.buttons {
+  text-align: center;
+  margin: auto;
+}
+ul {
+  list-style: none outside;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 5px;
 }
 
-.buttons button {
-  font-size: 100%;
+.vote-btn {
   color: #f7f1e3;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: bold;
-  width: 40vw;
   height: 20vh;
   cursor: pointer;
   border-radius: 10px;
-  text-align: center;
   overflow: hidden;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
 }
 
-.buttons button :active {
+.vote-btn div {
+  height: 100%;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.vote-btn:active {
   /*押したとき*/
   -webkit-transform: translateY(2px);
   transform: translateY(2px);/*沈むように*/
@@ -30,20 +94,49 @@
   background-image: linear-gradient(#fed6e3 0%, #ffbcbc 100%);/*グラデーションを明るく*/
 }
 
-.btn_first {
-  background-color: #ff5252;
+li:nth-child(1) {
+  background-color: #0097e6;
 }
-.btn_second {
-  background-color: #f7b731;
+li:nth-child(2) {
+  background-color: #e84118;
 }
-.btn_third {
-  background-color: #3dc1d3;
+li:nth-child(3) {
+  background-color: #8c7ae6;
 }
-.btn_forth {
-  background-color: #786fa6;
+li:nth-child(4) {
+  background-color: #44bd32;
+}
+li:nth-child(5) {
+  background-color: #ffa502;
+}
+li:nth-child(6) {
+  background-color: #ff6b81;
 }
 
-.quiz {
-  color: #ff5252;
-  font-weight: bold;
+/* スマホビュー */
+@media (max-width: 640px) {
+  .vote-text {
+    font-size: 3vw;
+  }
+  .buttons {
+    width: 80vw;
+  }
+  .vote-btn {
+    width: 30vw;
+    font-size: 70%;
+  }
+}
+
+/* PCビュー */
+@media (min-width: 640px) {
+  .vote-text {
+    font-size: 2.5vw;
+  }
+  .buttons {
+    width: 90vw;
+  }
+  .vote-btn {
+    width: 25vw;
+    font-size: 100%;
+  }
 }

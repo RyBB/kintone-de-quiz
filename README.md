@@ -1,4 +1,4 @@
-# kintone devCamp Step3@沖縄 LT
+# kintone devCamp Step3 LT
 
 LTで発表したクイズゲームのプログラムになります。<br/>
 [Webページ](https://rybb.github.io/kintone-de-quiz/front/src/html/index.html)

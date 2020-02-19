@@ -1,6 +1,6 @@
 'use strict';
-const btns = document.getElementsByClassName('btn');
-const url = 'https://sv51qzcvzb.execute-api.ap-northeast-1.amazonaws.com/dev/BB-devCampStep3-Okinawa-LT-func';
+const btns = document.getElementsByClassName('vote-btn');
+const url = 'https://gyem8jkda8.execute-api.ap-northeast-1.amazonaws.com/dev/BB-devCamp-Step3-LT-WebVote-func';
 
 const postRecord = function(ANS, DEVICE) {
   return axios.post(url, {answer: ANS, device: DEVICE});
@@ -9,8 +9,6 @@ const postRecord = function(ANS, DEVICE) {
 for (let i = 0; i < btns.length; i++) {
   btns[i].onmouseup = function() {
     const device = window.navigator.userAgent;
-    console.log(device);
-
     return postRecord(this.textContent, device)
       .then(() => {
         swal({
