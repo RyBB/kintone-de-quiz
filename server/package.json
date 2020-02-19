@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@kintone/kintone-js-sdk": "^0.7.4",
     "@kintone/rest-api-client": "^1.0.0"
   }
 }
