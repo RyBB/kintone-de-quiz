@@ -1,11 +1,11 @@
-service: {YOUR_SERVICE_NAME}
+service: <YOUR_SERVICE_NAME>
 
 custom:
   defaultStage: prod
   defaultProfile: default
-  defaultDomain: {YOUR_KINTONE_DOMAIN}
-  defaultAppId: {YOUR_KINTONE_DOMAIN}
-  defaultAPIToken: {YOUR_KINTONE_APITOKEN}
+  defaultURL: <YOUR_KINTONE_URL>
+  defaultAppId: <YOUR_APP_ID>
+  defaultAPIToken: <YOUR_API_TOKEN>
 
 provider:
   name: aws
@@ -21,14 +21,14 @@ provider:
       Resource:
         - "*"
   environment:
-    KINTONE_DOMAIN: ${self:custom.defaultDomain}
+    KINTONE_URL: ${self:custom.defaultURL}
     KINTONE_APPID: ${self:custom.defaultAppId}
     KINTONE_APITOKEN: ${self:custom.defaultAPIToken}
 
 functions:
   func:
     handler: handler.main
-    description: kintoneクイズゲームのサーバーサイド処理
+    description: kintoneでリアルタイムアンケートのサーバーサイド処理
     events:
       - http:
           path: ${self:service}-func
