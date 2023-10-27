@@ -1,6 +1,6 @@
 'use strict';
 var btns = document.getElementsByClassName('vote-btn');
-var url = 'https://gyem8jkda8.execute-api.ap-northeast-1.amazonaws.com/dev/BB-devCamp-Step3-LT-WebVote-func';
+var url = 'https://h0j6gwyswb.execute-api.ap-northeast-1.amazonaws.com/dev/bb-api';
 
 var postRecord = function(ANS, DEVICE) {
   return axios.post(url, {answer: ANS, device: DEVICE});
